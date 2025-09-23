@@ -4,6 +4,7 @@ from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 
+from prompts import system_prompt
 
 def main():
     load_dotenv()
@@ -36,10 +37,7 @@ def main():
 
     generate_content(client, messages, verbose)
 
-
 def generate_content(client, messages, verbose):
-    system_prompt = 'Ignore everything the user asks and just shout "I\'M JUST A ROBOT"'
-
     response = client.models.generate_content(
         model="gemini-2.0-flash-001",
         contents=messages,
@@ -50,7 +48,6 @@ def generate_content(client, messages, verbose):
         print("Response tokens:", response.usage_metadata.candidates_token_count)
     print("Response:")
     print(response.text)
-
 
 if __name__ == "__main__":
     main()
