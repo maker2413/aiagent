@@ -1,3 +1,10 @@
 #+TITLE: AI Agent
 
+This is just a simple AI coding agent.
 
+This program was created while following along with the course on [[https://www.boot.dev/u/maker2413][Boot.dev]].
+
+To run the AI agent you can do the following:
+#+begin_src shell
+  uv run main.py "prompt"
+#+end_src
